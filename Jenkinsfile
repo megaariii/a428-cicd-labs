@@ -21,6 +21,8 @@ node {
         }
     }
 
+    input message: 'Lanjutkan ke tahap Deploy? (Click "Proceed" to continue)'
+
     stage('Deploy') {
         checkout scm
         docker.image(dockerImage).inside('-p 3000:3000') {
